@@ -11,6 +11,10 @@
 var Handlebars = require('handlebars');
 var pdf = require('html-pdf');
 
+Handlebars.registerHelper('toLocaleString', function(number) {
+  return number.toLocaleString()
+});
+
 var create = function(document, options) {
     return new Promise((resolve, reject) => {
         if (!document || !document.html || !document.data) {
